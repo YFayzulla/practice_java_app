@@ -12,7 +12,6 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-
 public class CalculActivity extends AppCompatActivity {
 
     private EditText numberInput;

@@ -28,6 +28,7 @@
             android:name=".CalculActivity"
             android:exported="true" />
 
+
     </application>
 
 </manifest>

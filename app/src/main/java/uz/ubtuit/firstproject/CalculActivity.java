@@ -36,7 +36,20 @@ public class CalculActivity extends AppCompatActivity {
         Button buttonDivide = findViewById(R.id.buttonDivide);
         Button buttonEquals = findViewById(R.id.buttonEquals);
 
-        // Установка действий для каждой кнопки
+        Button buttonOne = findViewById(R.id.one);
+        Button buttonTwo = findViewById(R.id.two);
+        Button buttonThree = findViewById(R.id.three);
+        Button buttonFour = findViewById(R.id.four);
+        Button buttonFive = findViewById(R.id.five);
+        Button buttonSix = findViewById(R.id.six);
+        Button buttonSeven = findViewById(R.id.seven);
+        Button buttonEight = findViewById(R.id.eight);
+        Button buttonNine = findViewById(R.id.nine);
+        Button buttonZero = findViewById(R.id.zero);
+        Button buttonClear = findViewById(R.id.clear);
+
+        // actions
+
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -71,6 +84,85 @@ public class CalculActivity extends AppCompatActivity {
                 calculateResult();
             }
         });
+
+        buttonClear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                clearButton();
+            }
+        });
+
+
+
+        //for numbers
+
+        buttonOne.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                numberInput.setText("1");
+            }
+        });
+        buttonOne.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                numberInput.setText("1");
+            }
+        });
+        buttonTwo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                numberInput.setText("2");
+            }
+        });
+        buttonThree.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                numberInput.setText("3");
+            }
+        });
+        buttonFour.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                numberInput.setText("4");
+            }
+        });
+        buttonFive.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                numberInput.setText("5");
+            }
+        });
+        buttonSix.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                numberInput.setText("6");
+            }
+        });
+        buttonSeven.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                numberInput.setText("7");
+            }
+        });
+        buttonEight.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                numberInput.setText("8");
+            }
+        });
+        buttonNine.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                numberInput.setText("9");
+            }
+        });
+        buttonZero.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                numberInput.setText("0");
+            }
+        });
+
     }
 
     private void saveFirstNumber(String op) {
@@ -79,6 +171,10 @@ public class CalculActivity extends AppCompatActivity {
         numberInput.setText("");  // Очищаем поле для ввода второго числа
     }
 
+    private void clearButton(){
+        resultText.setText("0");
+        numberInput.setText("0");
+    }
     private void calculateResult() {
         double secondNumber = Double.parseDouble(numberInput.getText().toString());
         double result = 0;

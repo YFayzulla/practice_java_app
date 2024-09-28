@@ -4,13 +4,11 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
 public class CalculActivity extends AppCompatActivity {
 
-    private EditText numberInput;
-    private TextView resultText;
+    private TextView resultText;  // This will be used to display and input numbers
     private double firstNumber = 0;
     private double secondNumber = 0;
     private String operator = "";
@@ -21,15 +19,14 @@ public class CalculActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.calcul); // Set the content to calcul.xml
 
-        numberInput = findViewById(R.id.numberInput);
-        resultText = findViewById(R.id.resultText);
+        resultText = findViewById(R.id.resultText);  // This is now your number display/input
 
         Button buttonAdd = findViewById(R.id.buttonAdd);
         Button buttonSubtract = findViewById(R.id.buttonSubtract);
         Button buttonMultiply = findViewById(R.id.buttonMultiply);
         Button buttonDivide = findViewById(R.id.buttonDivide);
         Button buttonEquals = findViewById(R.id.buttonEquals);
-        Button buttonClear = findViewById(R.id.clear);
+        Button buttonClear = findViewById(R.id.buttonClear);
 
         Button buttonOne = findViewById(R.id.one);
         Button buttonTwo = findViewById(R.id.two);
@@ -48,10 +45,10 @@ public class CalculActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Button button = (Button) view;
                 if (isOperatorPressed) {
-                    numberInput.setText("");  // Clear input if an operator was just pressed
+                    resultText.setText("");  // Clear input if an operator was just pressed
                     isOperatorPressed = false;
                 }
-                numberInput.append(button.getText().toString());
+                resultText.append(button.getText().toString());
             }
         };
 
@@ -111,21 +108,20 @@ public class CalculActivity extends AppCompatActivity {
     }
 
     private void saveFirstNumber(String op) {
-        firstNumber = Double.parseDouble(numberInput.getText().toString());
+        firstNumber = Double.parseDouble(resultText.getText().toString());
         operator = op;
         isOperatorPressed = true;  // Flag to clear input on next number press
     }
 
     private void clearButton() {
         resultText.setText("0");
-        numberInput.setText("");
         firstNumber = 0;
         secondNumber = 0;
         operator = "";
     }
 
     private void calculateResult() {
-        secondNumber = Double.parseDouble(numberInput.getText().toString());
+        secondNumber = Double.parseDouble(resultText.getText().toString());
         double result = 0;
 
         switch (operator) {

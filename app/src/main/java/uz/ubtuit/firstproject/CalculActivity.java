@@ -44,7 +44,9 @@ public class CalculActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Button button = (Button) view;
-                if (isOperatorPressed) {
+
+                // If the display is currently "0", replace it with the new number
+                if (resultText.getText().toString().equals("0") || isOperatorPressed) {
                     resultText.setText("");  // Clear input if an operator was just pressed
                     isOperatorPressed = false;
                 }
@@ -114,7 +116,7 @@ public class CalculActivity extends AppCompatActivity {
     }
 
     private void clearButton() {
-        resultText.setText("0");
+        resultText.setText("0"); // Change to "" if you want it to appear empty
         firstNumber = 0;
         secondNumber = 0;
         operator = "";

@@ -92,73 +92,72 @@ public class CalculActivity extends AppCompatActivity {
         });
 
 
-
         //for numbers
 
+//        buttonOne.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                numberInput.setText("1");
+//            }
+//        });
         buttonOne.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                numberInput.setText("1");
-            }
-        });
-        buttonOne.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                numberInput.setText("1");
+                numberInput.append("1");
             }
         });
         buttonTwo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                numberInput.setText("2");
+                numberInput.append("2");
             }
         });
         buttonThree.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                numberInput.setText("3");
+                numberInput.append("3");
             }
         });
         buttonFour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                numberInput.setText("4");
+                numberInput.append("4");
             }
         });
         buttonFive.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                numberInput.setText("5");
+                numberInput.append("5");
             }
         });
         buttonSix.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                numberInput.setText("6");
+                numberInput.append("6");
             }
         });
         buttonSeven.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                numberInput.setText("7");
+                numberInput.append("7");
             }
         });
         buttonEight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                numberInput.setText("8");
+                numberInput.append("8");
             }
         });
         buttonNine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                numberInput.setText("9");
+                numberInput.append("9");
             }
         });
         buttonZero.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                numberInput.setText("0");
+                numberInput.append("0");
             }
         });
 
@@ -170,10 +169,11 @@ public class CalculActivity extends AppCompatActivity {
         numberInput.setText("");  // Очищаем поле для ввода второго числа
     }
 
-    private void clearButton(){
+    private void clearButton() {
         resultText.setText("0");
         numberInput.setText("0");
     }
+
     private void calculateResult() {
         double secondNumber = Double.parseDouble(numberInput.getText().toString());
         double result = 0;
@@ -197,6 +197,7 @@ public class CalculActivity extends AppCompatActivity {
                 }
                 break;
         }
-        resultText.setText(String.valueOf(result));
+//        resultText.setText(String.valueOf(result));
+        resultText.setText("hello world");
     }
 }

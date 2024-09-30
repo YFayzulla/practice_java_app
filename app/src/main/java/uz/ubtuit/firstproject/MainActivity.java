@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Create an Intent to navigate to CalculActivity
-                Intent intent = new Intent(MainActivity.this, CalculActivity.class);
+                Intent intent = new Intent(MainActivity.this, GameActivity.class);
                 startActivity(intent); // Start the new activity
             }
         });

@@ -13,7 +13,7 @@
         android:theme="@style/Theme.Firstproject"
         tools:targetApi="31">
 
-        <!-- MainActivity -->
+        <!-- CalculActivity -->
         <activity
             android:name=".CalculActivity"
             android:exported="true">
@@ -23,11 +23,10 @@
             </intent-filter>
         </activity>
 
-        <!-- CalculActivity -->
+        <!-- MainActivity -->
         <activity
             android:name=".MainActivity"
             android:exported="true" />
-
     </application>
 
 </manifest>

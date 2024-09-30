@@ -1,7 +1,10 @@
 package uz.ubtuit.firstproject;
 
 import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -13,13 +16,14 @@ public class CalculActivity extends AppCompatActivity {
     private double secondNumber = 0;
     private String operator = "";
     private boolean isOperatorPressed = false;
+    private int clickCount = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.calcul); // Set the content to calcul.xml
+        setContentView(R.layout.calcul);
 
-        resultText = findViewById(R.id.resultText);  // This is now your number display/input
+        resultText = findViewById(R.id.resultText);
 
         Button buttonAdd = findViewById(R.id.buttonAdd);
         Button buttonSubtract = findViewById(R.id.buttonSubtract);
@@ -69,9 +73,26 @@ public class CalculActivity extends AppCompatActivity {
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                clickCount++;
+
                 saveFirstNumber("+");
+
+                String result = resultText.getText().toString();
+                if (!result.isEmpty()) {
+                    firstNumber = Double.parseDouble(result);
+                }
+
+                // Check if the result is 12 and click count is 5
+                if (clickCount == 5 && firstNumber == 12) {
+                    // Navigate to another activity when the button is clicked 5 times
+                    Intent intent = new Intent(CalculActivity.this, MainActivity.class);
+                    startActivity(intent);
+
+                    clickCount = 0;
+                }
             }
         });
+
 
         buttonSubtract.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -147,7 +168,7 @@ public class CalculActivity extends AppCompatActivity {
         }
 
         resultText.setText(String.valueOf(result));
-        firstNumber = result;  // Set result as the first number for further operations
-        isOperatorPressed = true;  // Flag to clear input on next number press
+        firstNumber = result;
+        isOperatorPressed = true;
     }
 }

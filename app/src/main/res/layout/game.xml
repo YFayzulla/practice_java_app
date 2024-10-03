@@ -1,32 +1,56 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center">
+    android:gravity="center"
+    android:orientation="vertical">
+
     <TextView
-        android:id="@+id/resultTextView"
+        android:id="@+id/resultText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="g'alabalar soni"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/counterTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="0"
+        android:layout_marginBottom="20dp"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/resultTextView"
+        android:layout_width="246dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
         android:text="Harakatni tanlang"
-        android:textSize="24sp"
-        android:gravity="center"/>
+        android:textSize="24sp" />
+
     <ImageButton
         android:id="@+id/rockButton"
         android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_height="151dp"
+        android:layout_margin="8dp"
         android:contentDescription="Tosh"
-        android:layout_margin="8dp"/>
+        android:src="@drawable/img1" />
+
     <ImageButton
         android:id="@+id/paperButton"
         android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_height="171dp"
+        android:layout_margin="8dp"
         android:contentDescription="Qog'oz"
-        android:layout_margin="8dp"/>
+        android:src="@drawable/img2" />
+
     <ImageButton
         android:id="@+id/scissorsButton"
         android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_height="171dp"
+        android:layout_margin="8dp"
         android:contentDescription="Qaychi"
-        android:layout_margin="8dp"/>
+        android:src="@drawable/img3" />
+
 </LinearLayout>

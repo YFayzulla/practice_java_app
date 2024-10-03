@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Create an Intent to navigate to CalculActivity
+                // Create an Intent to navigate to GameActivity
                 Intent intent = new Intent(MainActivity.this, GameActivity.class);
                 startActivity(intent); // Start the new activity
             }

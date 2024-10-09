@@ -9,7 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="g'alabalar soni"
+        android:text="Число выигрыша"
         android:textSize="24sp" />
 
     <TextView
@@ -26,7 +26,7 @@
         android:layout_width="246dp"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Harakatni tanlang"
+        android:text="Выберите Действия"
         android:textSize="24sp" />
 
     <ImageButton

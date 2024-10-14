@@ -15,7 +15,7 @@
 
         <!-- CalculActivity -->
         <activity
-            android:name=".CalculActivity"
+            android:name=".ChatActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,6 +23,13 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".CalculActivity"
+            android:exported="true">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <!-- MainActivity -->
         <activity
             android:name=".MainActivity"
